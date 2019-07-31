@@ -57,7 +57,7 @@ var openByIframe = function (url) {
 
 var buttonStyle = {
     position: 'fixed',
-    zIndex: 999,
+    zIndex: 9999,
     bottom: '80px',
     left: '50%',
     transform: 'translateX(-50%)',
@@ -69,6 +69,7 @@ var buttonStyle = {
     color: '#fff',
     borderStyle: 'none',
     outline: 'none',
+    fontFamily: 'PingFang SC',
 };
 var getDefaultProps = function () {
     return {
@@ -190,7 +191,7 @@ var OpenApp = /** @class */ (function () {
         this.tip = document.createElement('div');
         var step1Text = isZh ? '1. 点击更多' : '1. Click More';
         var step2Text = isZh ? '2. 请选择「在浏览器中打开」' : '2. Choose “Open in Browser”';
-        var styleContainner = "\n      position: fixed;\n      z-index: 1000;\n      top: 0;\n      right: 0;\n      left: 0;\n      bottom: 0;\n      background-color: rgba(35, 33, 71, 0.8);\n    ";
+        var styleContainner = "\n      position: fixed;\n      z-index: 10000;\n      top: 0;\n      right: 0;\n      left: 0;\n      bottom: 0;\n      background-color: rgba(35, 33, 71, 0.8);\n    ";
         var styleArrow = "\n      position: absolute;\n      top: -16px;\n      right: 6px;\n    ";
         var styleMore = "\n      position: absolute;\n      top: 70px;\n      right: 130px;\n      text-align: center;\n    ";
         var styleText = "\n      font-size: 17px;\n      line-height: 17px;\n      text-align: center;\n      color: #fff;\n      margin-top: 16px;\n    ";

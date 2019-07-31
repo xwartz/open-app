@@ -10,7 +10,7 @@ interface Props {
 
 const buttonStyle = {
   position: 'fixed',
-  zIndex: 999,
+  zIndex: 9999,
   bottom: '80px',
   left: '50%',
   transform: 'translateX(-50%)',
@@ -22,6 +22,7 @@ const buttonStyle = {
   color: '#fff',
   borderStyle: 'none',
   outline: 'none',
+  fontFamily: 'PingFang SC',
 }
 
 const getDefaultProps = () => {
@@ -78,7 +79,7 @@ export default class OpenApp {
     const step2Text = isZh ? '2. 请选择「在浏览器中打开」' : '2. Choose “Open in Browser”'
     const styleContainner = `
       position: fixed;
-      z-index: 1000;
+      z-index: 10000;
       top: 0;
       right: 0;
       left: 0;
@@ -182,7 +183,7 @@ export default class OpenApp {
     let property = 'hidden'
     let eventName = 'visibilitychange'
 
-     // Opera 12.10 and Firefox 18 and later support
+    // Opera 12.10 and Firefox 18 and later support
     if (typeof document.hidden !== 'undefined') {
       property = 'hidden'
       eventName = 'visibilitychange'
