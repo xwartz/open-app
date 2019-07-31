@@ -33,7 +33,8 @@ var isimToken = function () {
 var isUnSupportScheme = function () {
     var ua = navigator.userAgent;
     var isWechat = /micromessenger\/([\d.]+)/i.test(ua);
-    return isWechat;
+    var isQQ = /qq\/([\d.]+)/i.test(ua);
+    return isWechat || isQQ;
 };
 var isAndroid = function () {
     var ua = navigator.userAgent;
@@ -52,7 +53,6 @@ var openByIframe = function (url) {
     ifr.style.display = 'none';
     document.body.appendChild(ifr);
 };
-//# sourceMappingURL=utils.js.map
 
 var buttonStyle = {
     position: 'fixed',
@@ -206,6 +206,7 @@ var OpenApp = /** @class */ (function () {
     };
     return OpenApp;
 }());
+//# sourceMappingURL=index.js.map
 
 export default OpenApp;
 //# sourceMappingURL=index.es5.js.map

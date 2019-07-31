@@ -9,7 +9,8 @@ export const isimToken = () => {
 export const isUnSupportScheme = () => {
   const ua = navigator.userAgent
   const isWechat = /micromessenger\/([\d.]+)/i.test(ua)
-  return isWechat
+  const isQQ = /qq\/([\d.]+)/i.test(ua)
+  return isWechat || isQQ
 }
 
 export const isAndroid = () => {

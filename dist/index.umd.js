@@ -39,7 +39,8 @@
     var isUnSupportScheme = function () {
         var ua = navigator.userAgent;
         var isWechat = /micromessenger\/([\d.]+)/i.test(ua);
-        return isWechat;
+        var isQQ = /qq\/([\d.]+)/i.test(ua);
+        return isWechat || isQQ;
     };
     var isAndroid = function () {
         var ua = navigator.userAgent;
@@ -58,7 +59,6 @@
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
     };
-    //# sourceMappingURL=utils.js.map
 
     var buttonStyle = {
         position: 'fixed',
@@ -212,6 +212,7 @@
         };
         return OpenApp;
     }());
+    //# sourceMappingURL=index.js.map
 
     return OpenApp;
 
