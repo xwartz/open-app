@@ -116,6 +116,7 @@ var OpenApp = /** @class */ (function () {
         };
         var defaultProps = getDefaultProps();
         this.props = __assign({}, defaultProps, props);
+        this.render();
     }
     OpenApp.prototype.render = function () {
         if (utils_1.isimToken()) {

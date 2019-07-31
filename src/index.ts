@@ -40,6 +40,7 @@ export default class OpenApp {
   constructor(props: Props) {
     const defaultProps = getDefaultProps()
     this.props = { ...defaultProps, ...props }
+    this.render()
   }
 
   render() {
