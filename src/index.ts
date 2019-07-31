@@ -77,6 +77,7 @@ export default class OpenApp {
     const step2Text = isZh ? '2. 请选择「在浏览器中打开」' : '2. Choose “Open in Browser”'
     const styleContainner = `
       position: fixed;
+      z-index: 1000;
       top: 0;
       right: 0;
       left: 0;
