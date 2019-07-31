@@ -17,6 +17,11 @@ export const isAndroid = () => {
   return /android/i.test(ua)
 }
 
+export const isiOS = () => {
+  const ua = navigator.userAgent
+  return /iphone|ipad|ipod/i.test(ua)
+}
+
 export const openByLocation = (url: string) => {
   location.href = url
 }

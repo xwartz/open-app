@@ -1,4 +1,4 @@
-import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation } from './utils'
+import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation, isiOS } from './utils'
 
 interface Props {
   schemeUrl?: string
@@ -49,8 +49,10 @@ export default class OpenApp {
       return
     }
 
-    this.renderButton()
-    this.renderTip()
+    if (isAndroid() || isiOS()) {
+      this.renderButton()
+      this.renderTip()
+    }
   }
 
   renderButton() {

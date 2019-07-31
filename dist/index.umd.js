@@ -45,6 +45,10 @@
         var ua = navigator.userAgent;
         return /android/i.test(ua);
     };
+    var isiOS = function () {
+        var ua = navigator.userAgent;
+        return /iphone|ipad|ipod/i.test(ua);
+    };
     var openByLocation = function (url) {
         location.href = url;
     };
@@ -166,8 +170,10 @@
             if (isimToken()) {
                 return;
             }
-            this.renderButton();
-            this.renderTip();
+            if (isAndroid() || isiOS()) {
+                this.renderButton();
+                this.renderTip();
+            }
         };
         OpenApp.prototype.renderButton = function () {
             var _a = this.props, buttonStyle = _a.buttonStyle, buttonText = _a.buttonText;
@@ -205,7 +211,6 @@
         };
         return OpenApp;
     }());
-    //# sourceMappingURL=index.js.map
 
     return OpenApp;
 
