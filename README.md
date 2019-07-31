@@ -7,7 +7,7 @@
 #### install:
 
 ```bash
-yarn add git@github.com:consenlabs/open-app
+yarn add git+https://github.com/xwartz/open-app
 ```
 
 或者 script 引用

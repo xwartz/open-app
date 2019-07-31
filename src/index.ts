@@ -21,6 +21,7 @@ const buttonStyle = {
   fontSize: '15px',
   color: '#fff',
   borderStyle: 'none',
+  outline: 'none',
 }
 
 const getDefaultProps = () => {

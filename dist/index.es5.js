@@ -67,6 +67,7 @@ var buttonStyle = {
     fontSize: '15px',
     color: '#fff',
     borderStyle: 'none',
+    outline: 'none',
 };
 var getDefaultProps = function () {
     return {
@@ -205,7 +206,6 @@ var OpenApp = /** @class */ (function () {
     };
     return OpenApp;
 }());
-//# sourceMappingURL=index.js.map
 
 export default OpenApp;
 //# sourceMappingURL=index.es5.js.map

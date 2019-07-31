@@ -73,6 +73,7 @@
         fontSize: '15px',
         color: '#fff',
         borderStyle: 'none',
+        outline: 'none',
     };
     var getDefaultProps = function () {
         return {
@@ -211,7 +212,6 @@
         };
         return OpenApp;
     }());
-    //# sourceMappingURL=index.js.map
 
     return OpenApp;
 
