@@ -20,11 +20,12 @@ const buttonStyle = {
   padding: '14px 28px',
   fontSize: '15px',
   color: '#fff',
+  borderStyle: 'none',
 }
 
 const getDefaultProps = () => {
   return {
-    schemeUrl: 'imtokenv2://navigate?screen=DappView',
+    schemeUrl: 'imtokenv2://navigate/DappView',
     fallbackUrl: 'https://token.im/download',
     buttonStyle: buttonStyle,
     buttonText: isZh ? '打开 imToken' : 'Open imToken',
@@ -37,7 +38,7 @@ export default class OpenApp {
   tip: any
   timer: any
 
-  constructor(props: Props) {
+  constructor(props: Props = {}) {
     const defaultProps = getDefaultProps()
     this.props = { ...defaultProps, ...props }
     this.render()
@@ -159,7 +160,7 @@ export default class OpenApp {
     // try to open app
     const { schemeUrl } = this.props
     const url = `${schemeUrl}?url=${location.href}`
-    if (isAndroid) {
+    if (isAndroid()) {
       openByIframe(url)
     } else {
       openByLocation(url)

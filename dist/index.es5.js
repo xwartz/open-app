@@ -48,6 +48,7 @@ var openByIframe = function (url) {
     ifr.style.display = 'none';
     document.body.appendChild(ifr);
 };
+//# sourceMappingURL=utils.js.map
 
 var buttonStyle = {
     position: 'fixed',
@@ -61,10 +62,11 @@ var buttonStyle = {
     padding: '14px 28px',
     fontSize: '15px',
     color: '#fff',
+    borderStyle: 'none',
 };
 var getDefaultProps = function () {
     return {
-        schemeUrl: 'imtokenv2://navigate?screen=DappView',
+        schemeUrl: 'imtokenv2://navigate/DappView',
         fallbackUrl: 'https://token.im/download',
         buttonStyle: buttonStyle,
         buttonText: isZh ? '打开 imToken' : 'Open imToken',
@@ -74,6 +76,7 @@ var getDefaultProps = function () {
 var OpenApp = /** @class */ (function () {
     function OpenApp(props) {
         var _this = this;
+        if (props === void 0) { props = {}; }
         this.showTip = function () {
             _this.tip.style.display = 'block';
         };
@@ -93,7 +96,7 @@ var OpenApp = /** @class */ (function () {
             // try to open app
             var schemeUrl = _this.props.schemeUrl;
             var url = schemeUrl + "?url=" + location.href;
-            if (isAndroid) {
+            if (isAndroid()) {
                 openByIframe(url);
             }
             else {
@@ -196,6 +199,7 @@ var OpenApp = /** @class */ (function () {
     };
     return OpenApp;
 }());
+//# sourceMappingURL=index.js.map
 
 export default OpenApp;
 //# sourceMappingURL=index.es5.js.map

@@ -9,7 +9,7 @@ export default class OpenApp {
     props: any;
     tip: any;
     timer: any;
-    constructor(props: Props);
+    constructor(props?: Props);
     render(): void;
     renderButton(): void;
     renderTip(): void;
