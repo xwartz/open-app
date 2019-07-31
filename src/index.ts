@@ -73,8 +73,8 @@ export default class OpenApp {
 
   renderTip() {
     this.tip = document.createElement('div')
-    const step1Text = isZh ? '点击更多' : '1. Click More'
-    const step2Text = isZh ? '选择在浏览器中打开' : '2. Choose “Open in Browser”'
+    const step1Text = isZh ? '1. 点击更多' : '1. Click More'
+    const step2Text = isZh ? '2. 请选择「在浏览器中打开」' : '2. Choose “Open in Browser”'
     const styleContainner = `
       position: fixed;
       top: 0;
