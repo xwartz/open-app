@@ -205,6 +205,7 @@ var OpenApp = /** @class */ (function () {
     };
     return OpenApp;
 }());
+//# sourceMappingURL=index.js.map
 
 export default OpenApp;
 //# sourceMappingURL=index.es5.js.map
