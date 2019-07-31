@@ -34,7 +34,8 @@
         return /zh/i.test(navigator.language);
     };
     var isimToken = function () {
-        return typeof window.imToken !== 'undefined';
+        var imToken = window.imToken;
+        return imToken && imToken.version;
     };
     var isUnSupportScheme = function () {
         var ua = navigator.userAgent;
@@ -212,7 +213,6 @@
         };
         return OpenApp;
     }());
-    //# sourceMappingURL=index.js.map
 
     return OpenApp;
 

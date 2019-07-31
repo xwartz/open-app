@@ -3,7 +3,8 @@ export const isZh = () => {
 }
 
 export const isimToken = () => {
-  return typeof (window as any).imToken !== 'undefined'
+  const imToken = (window as any).imToken
+  return imToken && imToken.version
 }
 
 export const isUnSupportScheme = () => {

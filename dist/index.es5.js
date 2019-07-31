@@ -28,7 +28,8 @@ var isZh = function () {
     return /zh/i.test(navigator.language);
 };
 var isimToken = function () {
-    return typeof window.imToken !== 'undefined';
+    var imToken = window.imToken;
+    return imToken && imToken.version;
 };
 var isUnSupportScheme = function () {
     var ua = navigator.userAgent;
@@ -206,7 +207,6 @@ var OpenApp = /** @class */ (function () {
     };
     return OpenApp;
 }());
-//# sourceMappingURL=index.js.map
 
 export default OpenApp;
 //# sourceMappingURL=index.es5.js.map
