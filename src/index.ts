@@ -1,4 +1,4 @@
-import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation, isiOS } from './utils'
+import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation, isiOS, isChrome, openByTagA } from './utils'
 
 interface Props {
   schemeUrl?: string
@@ -166,7 +166,11 @@ export default class OpenApp {
     const { schemeUrl } = this.props
     const url = `${schemeUrl}?url=${location.href}`
     if (isAndroid()) {
-      openByIframe(url)
+      if (isChrome()) {
+        openByTagA(url)
+      } else {
+        openByIframe(url)
+      }
     } else {
       openByLocation(url)
     }
