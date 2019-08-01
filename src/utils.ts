@@ -29,6 +29,10 @@ export const isiOS = () => {
   return /iphone|ipad|ipod/i.test(ua)
 }
 
+export const isiPhoneX = () => {
+  return /iphone/gi.test(navigator.userAgent) && screen.height >= 812
+}
+
 export const openByLocation = (url: string) => {
   location.href = url
 }

@@ -1,4 +1,4 @@
-import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation, isiOS, isChrome, openByTagA } from './utils'
+import { isimToken, isZh, isUnSupportScheme, isAndroid, openByIframe, openByLocation, isiOS, isChrome, openByTagA, isiPhoneX } from './utils'
 
 interface Props {
   schemeUrl?: string
@@ -11,7 +11,7 @@ interface Props {
 const buttonStyle = {
   position: 'fixed',
   zIndex: 9999,
-  bottom: '80px',
+  bottom: '40px',
   left: '50%',
   transform: 'translateX(-50%)',
   background: '#0890BE',
@@ -29,7 +29,7 @@ const getDefaultProps = () => {
   return {
     schemeUrl: 'imtokenv2://navigate/DappView',
     fallbackUrl: 'https://token.im/download',
-    buttonStyle: buttonStyle,
+    buttonStyle: isiPhoneX() ? { ...buttonStyle, bottom: '60px' } : buttonStyle,
     buttonText: isZh ? '打开 imToken' : 'Open imToken',
     timeout: 2000,
   }
