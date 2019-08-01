@@ -47,9 +47,16 @@
         var ua = navigator.userAgent;
         return /android/i.test(ua);
     };
+    var isChrome = function () {
+        var ua = navigator.userAgent;
+        return /chrome\/[\d.]+ Mobile Safari\/[\d.]+/i.test(ua);
+    };
     var isiOS = function () {
         var ua = navigator.userAgent;
         return /iphone|ipad|ipod/i.test(ua);
+    };
+    var isiPhoneX = function () {
+        return /iphone/gi.test(navigator.userAgent) && screen.height >= 812;
     };
     var openByLocation = function (url) {
         location.href = url;
@@ -60,11 +67,18 @@
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
     };
+    var openByTagA = function (url) {
+        var tagA = document.createElement('a');
+        tagA.setAttribute('href', url);
+        tagA.style.display = 'none';
+        document.body.appendChild(tagA);
+        tagA.click();
+    };
 
     var buttonStyle = {
         position: 'fixed',
         zIndex: 9999,
-        bottom: '80px',
+        bottom: '40px',
         left: '50%',
         transform: 'translateX(-50%)',
         background: '#0890BE',
@@ -81,7 +95,7 @@
         return {
             schemeUrl: 'imtokenv2://navigate/DappView',
             fallbackUrl: 'https://token.im/download',
-            buttonStyle: buttonStyle,
+            buttonStyle: isiPhoneX() ? __assign({}, buttonStyle, { bottom: '60px' }) : buttonStyle,
             buttonText: isZh ? '打开 imToken' : 'Open imToken',
             timeout: 2000,
         };
@@ -110,7 +124,12 @@
                 var schemeUrl = _this.props.schemeUrl;
                 var url = schemeUrl + "?url=" + location.href;
                 if (isAndroid()) {
-                    openByIframe(url);
+                    if (isChrome()) {
+                        openByTagA(url);
+                    }
+                    else {
+                        openByIframe(url);
+                    }
                 }
                 else {
                     openByLocation(url);
