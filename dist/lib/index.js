@@ -15,7 +15,7 @@ var utils_1 = require("./utils");
 var buttonStyle = {
     position: 'fixed',
     zIndex: 9999,
-    bottom: '40px',
+    bottom: '25px',
     left: '50%',
     transform: 'translateX(-50%)',
     background: '#0890BE',
@@ -32,7 +32,7 @@ var getDefaultProps = function () {
     return {
         schemeUrl: 'imtokenv2://navigate/DappView',
         fallbackUrl: 'https://token.im/download',
-        buttonStyle: utils_1.isiPhoneX() ? __assign({}, buttonStyle, { bottom: '60px' }) : buttonStyle,
+        buttonStyle: utils_1.isiPhoneX() ? __assign({}, buttonStyle, { bottom: '59px' }) : buttonStyle,
         buttonText: utils_1.isZh ? '打开 imToken' : 'Open imToken',
         timeout: 2000,
     };
