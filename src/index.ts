@@ -22,7 +22,7 @@ const buttonStyle = {
   color: '#fff',
   borderStyle: 'none',
   outline: 'none',
-  fontFamily: 'PingFang SC',
+  fontFamily: 'sans-serif',
 }
 
 const getDefaultProps = () => {
@@ -30,7 +30,7 @@ const getDefaultProps = () => {
     schemeUrl: 'imtokenv2://navigate/DappView',
     fallbackUrl: 'https://token.im/download',
     buttonStyle: isiPhoneX() ? { ...buttonStyle, bottom: '59px' } : buttonStyle,
-    buttonText: isZh ? '打开 imToken' : 'Open imToken',
+    buttonText: isZh ? '打开 imToken' : 'Open in imToken',
     timeout: 2000,
   }
 }

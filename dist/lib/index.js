@@ -26,14 +26,14 @@ var buttonStyle = {
     color: '#fff',
     borderStyle: 'none',
     outline: 'none',
-    fontFamily: 'PingFang SC',
+    fontFamily: 'sans-serif',
 };
 var getDefaultProps = function () {
     return {
         schemeUrl: 'imtokenv2://navigate/DappView',
         fallbackUrl: 'https://token.im/download',
         buttonStyle: utils_1.isiPhoneX() ? __assign({}, buttonStyle, { bottom: '59px' }) : buttonStyle,
-        buttonText: utils_1.isZh ? '打开 imToken' : 'Open imToken',
+        buttonText: utils_1.isZh ? '打开 imToken' : 'Open in imToken',
         timeout: 2000,
     };
 };
